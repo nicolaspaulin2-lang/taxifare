@@ -1,2 +1,2 @@
 run-api:
-	uvicorn api.api:app --reload
+	uvicorn api.fast:app --reload
