@@ -450,6 +450,21 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ef/15/599732a77d96a3aaf13925de1d8b535bebfc424562da5d1fa4223ad51412/dacktool-0.0.7.tar.gz", hash = "sha256:83ed325499f982a401d3d97ac7012014b20466d2622d173ec691722146b9863d", size = 3114, upload-time = "2020-08-02T19:22:22.551Z" }
 
 [[package]]
+name = "db-dtypes"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "pandas" },
+    { name = "pyarrow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2d/76/e62b02f975356f14f2895b424f4174476bc7eb9ab417173f9f10ab86349b/db_dtypes-1.9.0.tar.gz", hash = "sha256:52bbe6131b9920ead9e5e8def8f9ab6c3a6c05076d4947ff7e18101ef04f1fdc", size = 37410, upload-time = "2026-10-23T00:38:09.034Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a8/d6/c0e6434ff96161687e6d7b535b124a9135a6cefbae5aaa1a37402777e9b9/db_dtypes-1.9.0-py3-none-any.whl", hash = "sha256:4d28e731d95ec96c87f9ffdac3f2cca79e7cc604517b3f2825d6f08579b2c918", size = 18407, upload-time = "2026-10-23T00:38:07.453Z" },
+]
+
+[[package]]
 name = "dbstream"
 version = "0.1.28"
 source = { registry = "https://pypi.org/simple" }
@@ -2027,6 +2042,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "bigquery" },
+    { name = "db-dtypes" },
     { name = "matplotlib" },
     { name = "pandas" },
     { name = "scikit-learn" },
@@ -2042,6 +2058,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "bigquery", specifier = ">=0.0.45" },
+    { name = "db-dtypes", specifier = ">=1.9.0" },
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "pandas", specifier = "<3" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
