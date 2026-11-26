@@ -5,9 +5,12 @@ FastAPI test to check everything is in order
 import os
 import pandas as pd
 from fastapi import FastAPI
+from taxifare.predict import load_model, predict
+
+
 ### from taxifare.predict import model
 
-### MODEL_PATH = "models/pipeline_linear.joblib"
+MODEL_PATH = "models/linreg_pipeline.joblib"
 
 # FastApi Instance
 app = FastAPI()
@@ -25,11 +28,23 @@ def dummy(number: int):
     return {"result": number ** 2}
 
 # Prediction endpoint
-@app.get("/predict")
-def predict(pickup_longitude:float,
+@app.get('/predict')
+def prediction(pickup_datetime:str,
+            pickup_longitude:float,
             pickup_latitude:float,
             dropoff_longitude:float,
             dropoff_latitude:float,
-            passenger_count:float):
-    """Fonction de predictions"""
-    return passenger_count*2.5
+            passenger_count:float
+            ):
+    X_pred = pd.DataFrame([{
+        'pickup_datetime': pickup_datetime,
+        'pickup_longitude': pickup_longitude,
+        'pickup_latitude': pickup_latitude,
+        'dropoff_longitude': dropoff_longitude,
+        'dropoff_latitude': dropoff_latitude,
+        'passenger_count': passenger_count
+        }])
+
+    model = load_model(MODEL_PATH)
+    prediction = predict(model, X_pred)
+    return {'prediction': prediction[0]}
