@@ -12,6 +12,5 @@ COPY README.md README.md
 COPY models models
 
 RUN uv sync
-#  "--port"
 
-CMD ["uv", "run", "uvicorn", "api.fast:app", "--host", "0.0.0.0"]
+CMD ["uv", "run", "uvicorn", "api.fast:app", "--host", "0.0.0.0", "--port", "8080"]
