@@ -12,3 +12,7 @@ wheels/
 # model
 models/
 *.joblib
+
+# notebooks
+notebooks/
+*.ipynb
