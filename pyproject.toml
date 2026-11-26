@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12.9"
 dependencies = [
     "bigquery>=0.0.45",
+    "db-dtypes>=1.9.0",
     "fastapi>=0.165.0",
     "matplotlib>=3.11.2",
     "numpy>=2.5.5",
