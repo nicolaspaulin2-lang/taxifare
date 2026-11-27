@@ -30,4 +30,4 @@ ENV UV_NO_DEV=1 \
 RUN uv sync
 
 #CMD ,"--port", "8080"
-CMD ["uv", "run", "uvicorn", "api.fast:app", "--host", "0.0.0.0"]
+CMD ["uv", "run", "uvicorn", "api.fast:app", "--host", "0.0.0.0","--port", "8080"]
