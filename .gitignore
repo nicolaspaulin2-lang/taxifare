@@ -16,3 +16,6 @@ models/
 # notebooks
 notebooks/
 *.ipynb
+
+#.env
+.env
