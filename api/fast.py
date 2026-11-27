@@ -47,4 +47,4 @@ def prediction(pickup_datetime:str,
 
     model = load_model(MODEL_PATH)
     prediction = predict(model, X_pred)
-    return {'prediction': prediction[0]}
+    return {'fare': prediction[0]}
